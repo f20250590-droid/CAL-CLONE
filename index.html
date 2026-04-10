@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cal.com - Schedule your meetings | SUTT Task 1</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="page-grid-wrapper">
+    <header class="header">
+        <nav class="navbar">
+            <div class="navbar__logo">Cal.com</div>
+            <ul class="navbar__links">
+                <li><a href="#">Solutions <span>⌄</span></a></li>
+                <li><a href="#">Enterprise</a></li>
+                <li><a href="#">Cal.ai</a></li>
+                <li><a href="#">Developer <span>⌄</span></a></li>
+                <li><a href="#">Resources <span>⌄</span></a></li>
+                <li><a href="#">Pricing</a></li>
+            </ul>
+            <div class="navbar__actions">
+                <a href="#" class="link">Sign in</a>
+                <a href="#" class="btn btn--primary">Get started ></a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            
+            <div class="hero__content">
+                <a href="#" class="badge">Cal.com launches v6.3 ></a>
+                
+                <h1 class="hero__title">The better way to schedule your meetings</h1>
+                <p class="hero__description">
+                    A fully customizable scheduling software for individuals, businesses taking calls and developers building scheduling platforms where users meet users.
+                </p>
+                
+                <div class="hero__cta">
+                    <button class="btn btn--google">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                        Sign up with Google
+                    </button>
+                    <button class="btn btn--secondary">Sign up with email ></button>
+                </div>
+                <p class="hero__subtext">No credit card required</p>
+
+                <div class="hero__reviews">
+                    <div class="review">
+                        <span class="stars green">★★★★★</span>
+                        <span class="brand">★ Trustpilot</span>
+                    </div>
+                    <div class="review">
+                        <span class="stars yellow">★★★★★</span>
+                        <span class="brand orange-circle">P</span>
+                    </div>
+                    <div class="review">
+                        <span class="stars red">★★★★★</span>
+                        <span class="brand red-circle">G</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero__visuals">
+                
+                <article class="mockup-card profile-card">
+                    <div class="profile-card__header">
+                        <div class="avatar">ET</div>
+                        <div>
+                            <h4 class="name">Ethan Taylor</h4>
+                            <h3 class="role">Academic Counseling</h3>
+                        </div>
+                    </div>
+                    <p class="profile-card__desc">Virtual counseling session for university students to discuss academic progress and well-being.</p>
+                    
+                    <div class="time-pills">
+                        <span class="pill">15m</span>
+                        <span class="pill">30m</span>
+                        <span class="pill pill--active">45m</span>
+                        <span class="pill">1h</span>
+                    </div>
+                    
+                    <div class="meeting-details">
+                        <p>🎥 Google Meet</p>
+                        <p>🌍 America/California ⌄</p>
+                    </div>
+                </article>
+
+                <aside class="mockup-card calendar-card">
+                    <div class="calendar-card__header">
+                        <h4>May 2025</h4>
+                        <div class="nav-arrows">❮ ❯</div>
+                    </div>
+                    <div class="calendar-grid">
+                        <div class="day-name">SUN</div><div class="day-name">MON</div><div class="day-name">TUE</div><div class="day-name">WED</div><div class="day-name">THU</div><div class="day-name">FRI</div><div class="day-name">SAT</div>
+                        
+                        <div></div><div></div><div></div>
+                        <div class="date">1</div><div class="date">2</div><div class="date">3</div><div class="date">4</div>
+                        
+                        <div class="date">5</div><div class="date">6</div><div class="date">7</div><div class="date date--active">8</div><div class="date">9</div><div class="date">10</div><div class="date">11</div>
+                        
+                        <div class="date">12</div><div class="date">13</div><div class="date">14</div><div class="date">15</div><div class="date">16</div><div class="date">17</div><div class="date">18</div>
+                        
+                        <div class="date">19</div><div class="date">20</div><div class="date">21</div><div class="date">22</div><div class="date">23</div><div class="date">24</div><div class="date">25</div>
+                    </div>
+                </aside>
+
+            </div>
+        </section>
+
+        <section class="how-it-works">
+            <div class="section-header">
+                <div class="pill-badge">
+                    <span class="grid-icon">↪️</span> How it works
+                </div>
+                <h2>With us, appointment scheduling is easy</h2>
+                <p>Effortless scheduling for business and individuals, powerful solutions for fast-growing modern companies.</p>
+                <div class="button-group">
+                    <a href="#" class="btn btn-dark">Get started &rsaquo;</a>
+                    <a href="#" class="btn btn-light">Book a demo &rsaquo;</a>
+                </div>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Connect your calendar</h3>
+                        <p>We'll handle all the cross-referencing, so you don't have to worry about double bookings.</p>
+                    </div>
+                    <div class="step-visual">
+                        <div class="orbital-graphic">
+                            <div class="central-logo">Cal.com</div>
+                            <div class="orbit-icon outlook">O</div>
+                            <div class="orbit-icon google">G</div>
+                            <div class="orbit-icon apple">A</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Set your availability</h3>
+                        <p>Want to block off weekends? Set up any buffers? We make that easy.</p>
+                    </div>
+                    <div class="step-visual">
+                        <div class="availability-graphic">
+                            <div class="avail-row"><span>Mon</span> 8:30 am - 5:00 pm</div>
+                            <div class="avail-row"><span>Tue</span> 9:00 am - 6:30 pm</div>
+                            <div class="avail-row"><span>Wed</span> 10:00 am - 7:00 pm</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Choose how to meet</h3>
+                        <p>It could be a video chat, phone call, or a walk in the park!</p>
+                    </div>
+                    <div class="step-visual">
+                        <div class="video-call-graphic">
+                            <div class="avatar-circle"></div>
+                            <div class="avatar-circle"></div>
+                            <div class="video-controls">● ● ● ●</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="benefits-section">
+            <div class="section-header">
+                <div class="pill-badge">
+                    <span class="grid-icon">🏢</span> Benefits
+                </div>
+                <h2>Your all-purpose scheduling app</h2>
+                <p>Discover a variety of our advanced features. Unlimited and free for individuals.</p>
+                <div class="button-group">
+                    <a href="#" class="btn btn-dark">Get started &rsaquo;</a>
+                    <a href="#" class="btn btn-light">Book a demo &rsaquo;</a>
+                </div>
+            </div>
+
+            <div class="benefits-grid">
+                
+                <div class="benefit-card">
+                    <div class="benefit-text">
+                        <h3>Avoid meeting overload</h3>
+                        <p>Only get booked when you want to. Set daily, weekly or monthly limits and add buffers around your events to allow you to focus or take a break.</p>
+                    </div>
+                    <div class="ui-placeholder">
+                        <div class="mock-ui-box">Notice and buffers settings...</div>
+                    </div>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-text">
+                        <h3>Stand out with a custom booking link</h3>
+                        <p>Customize your booking link so it's short and easy to remember for your bookers. No more long, complicated links one can easily forget.</p>
+                    </div>
+                    <div class="ui-placeholder">
+                        <div class="mock-ui-box">Custom booking link preview...</div>
+                    </div>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-text">
+                        <h3>Streamline your bookers' experience</h3>
+                        <p>Let your bookers overlay their calendar, receive booking confirmations via text or email, get events added to their calendar, and allow them to reschedule with ease.</p>
+                    </div>
+                    <div class="ui-placeholder">
+                        <div class="mock-ui-box">Calendar overlay interface...</div>
+                    </div>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-text">
+                        <h3>Reduce no-shows with automated meeting reminders</h3>
+                        <p>Easily send sms or meeting reminder emails about bookings, and send automated follow-ups to gather any relevant information before the meeting.</p>
+                    </div>
+                    <div class="ui-placeholder">
+                        <div class="mock-ui-box">Automated reminders setup...</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="more-features-container">
+                <h2 class="more-features-title">...and so much more!</h2>
+                
+                <div class="mini-features-grid">
+                    <div class="mini-card">
+                        <div class="mini-icon">💳</div>
+                        <span>Accept payments</span>
+                    </div>
+                    <div class="mini-card">
+                        <div class="mini-icon">📹</div>
+                        <span>Built-in video conferencing</span>
+                    </div>
+                    <div class="mini-card">
+                        <div class="mini-icon">🔗</div>
+                        <span>Short booking links</span>
+                    </div>
+                    <div class="mini-card">
+                        <div class="mini-icon">🔒</div>
+                        <span>Privacy first</span>
+                    </div>
+                    <div class="mini-card">
+                        <div class="mini-icon">🌍</div>
+                        <span>65+ languages</span>
+                    </div>
+                    <div class="mini-card">
+                        <div class="mini-icon">⚡</div>
+                        <span>Easy embeds</span>
+                    </div>
+                    <div class="mini-card">
+                        <div class="mini-icon">🧩</div>
+                        <span>All your favorite apps</span>
+                    </div>
+                    <div class="mini-card">
+                        <div class="mini-icon">🎨</div>
+                        <span>Simple customization</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="static-testimonials">
+            <div class="test-header">
+                <div class="pill-badge">
+                    <span class="grid-icon">👤</span> Testimonials
+                </div>
+                <h2>Don't just take our word for it</h2>
+                <p>Our users are our best ambassadors. Discover why we're the top choice for scheduling meetings.</p>
+            </div>
+
+            <div class="static-cards-container">
+                
+                <div class="static-card faded-card">
+                    <h3>"Switched from Calendly to Cal.com and never looked back."</h3>
+                    <div class="author-info">
+                        <div class="avatar dark">D</div>
+                        <div class="author-details">
+                            <h4>David</h4>
+                            <span>Web.dev</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="static-card center-card">
+                    <h3>"Just gave it a go and it's definitely the easiest meeting I've ever scheduled!"</h3>
+                    <div class="author-info">
+                        <div class="avatar dark">A</div>
+                        <div class="author-details">
+                            <h4>Aria Minaei</h4>
+                            <span>CEO, Theatre.JS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="static-card faded-card">
+                    <h3>"I finally made the move today after I couldn't find how to configure the Calendly dashboard."</h3>
+                    <div class="author-info">
+                        <div class="avatar orange">A</div>
+                        <div class="author-details">
+                            <h4>Ant Wilson</h4>
+                            <span>Co-Founder & CTO, Supabase</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="sync-tools">
+            <div class="sync-tools__card">
+                
+                <div class="sync-tools__content">
+                    <div class="pill-badge">
+                        <span class="grid-icon">⚏</span> App store
+                    </div>
+                    <h2>All your key tools in-sync with your meetings</h2>
+                    <p>Cal.com works with all apps already in your flow ensuring everything works perfectly together.</p>
+                    <div class="cta-buttons">
+                        <a href="#" class="btn btn--primary">Get started ></a>
+                        <a href="#" class="btn btn--secondary">Explore apps ></a>
+                    </div>
+                </div>
+
+                <div class="sync-tools__apps">
+                    <div class="app-grid">
+                        <div class="app-cell border-right border-bottom">
+                            <div class="app-logo orange-text">HubSpot</div>
+                        </div>
+                        <div class="app-cell border-right border-bottom">
+                            <div class="app-logo blue-text">☁️</div>
+                        </div>
+                        <div class="app-cell border-right border-bottom">
+                            <div class="app-logo blue-bg">O</div>
+                        </div>
+                        <div class="app-cell border-bottom">
+                            <div class="app-logo gmeet">📹</div>
+                        </div>
+                        <div class="app-cell border-right">
+                            <div class="app-logo gcal">31</div>
+                        </div>
+                        <div class="app-cell border-right">
+                            <div class="app-logo teams">T</div>
+                        </div>
+                        <div class="app-cell border-right">
+                            <div class="app-logo dark-bg">///</div>
+                        </div>
+                        <div class="app-cell">
+                            <div class="app-logo blue-bg">🎥</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="wall-of-love">
+            <div class="wol-header">
+                <div class="wol-badge">💬 Wall of love</div>
+                <h2>See why our users love Cal.com</h2>
+                <p>Read the impact we've had from those who matter most - our customers.</p>
+                <div class="cta-buttons center-buttons">
+                    <button class="btn btn--primary">Get started ></button>
+                    <button class="btn btn--secondary">Book a demo ></button>
+                </div>
+            </div>
+
+            <div class="wol-masonry">
+                <div class="review-card">
+                    <div class="reviewer-info">
+                        <div class="avatar blue">J</div>
+                        <div class="reviewer-details">
+                            <h4>JJ — oss/acc</h4>
+                            <span>@JosephJacks_</span>
+                        </div>
+                    </div>
+                    <p>Officially switching from <a href="#" class="mention">@Calendly</a> to <a href="#" class="mention">@calcom</a> ⚡</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="reviewer-info">
+                        <div class="avatar orange">K</div>
+                        <div class="reviewer-details">
+                            <h4>Kent C. Dodds</h4>
+                            <span>@kentcdodds</span>
+                        </div>
+                    </div>
+                    <p>I just migrated from calendly to <a href="#" class="mention">cal.com</a></p>
+                    <p>I'm liking it so far. I wasn't particularly displeased with calendly. It's fine. But I like that cal is OSS and my sub to calendly was coming up for renewal so I thought I'd check it out. Looks good.</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="reviewer-info">
+                        <div class="avatar green">J</div>
+                        <div class="reviewer-details">
+                            <h4>Jeroen C.</h4>
+                            <span>Pre-incubator program manager</span>
+                        </div>
+                    </div>
+                    <p>I came from calendly, where I had a lot of features I didn't need in a paid account. <a href="#" class="mention">Cal.com</a>'s free account for a freelancer like me is great. It packs quite some features, including Google Analytics and workflows. Support has been very responsive in fixing things, big plus!</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="reviewer-info">
+                        <div class="avatar purple">D</div>
+                        <div class="reviewer-details">
+                            <h4>davidvkimball</h4>
+                            <span></span>
+                        </div>
+                    </div>
+                    <p>Without a doubt the best calendar/scheduling application I have ever used. It has all of the advanced features I need while also being insanely intuitive and straightforward for both end-users and booking recipients. Love it!!</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="reviewer-info">
+                        <div class="avatar red">J</div>
+                        <div class="reviewer-details">
+                            <h4>Jean-Philippe Allard</h4>
+                            <span></span>
+                        </div>
+                    </div>
+                    <p>What an amazing support experience! Identified a small bug and sent them an e-mail. The bug was fixed (Github pull request as a proof!) in under 24 hours. I've never seen such a fast and efficient support before, call me impressed!</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="reviewer-info">
+                        <div class="avatar dark">G</div>
+                        <div class="reviewer-details">
+                            <h4>Guillermo Rauch</h4>
+                            <span>@rauchg</span>
+                        </div>
+                    </div>
+                    <p>Coolest domain. Check<br>Coolest mission. Check<br>Coolest product. Check<br><br><a href="#" class="mention">cal.com</a></p>
+                </div>
+            </div>
+
+            <div class="wol-footer">
+                <button class="btn btn--secondary">Show more</button>
+            </div>
+        </section>
+
+        <section class="trusted-by">
+            <div class="trusted-by__container">
+                <p class="trusted-by__text">Trusted by fast-growing<br>companies around the world</p>
+                <div class="trusted-by__logos">
+                    <span class="logo-font">▲ Vercel</span>
+                    <span class="logo-font">⚡ supabase</span>
+                    <span class="logo-font bold">ûdemy</span>
+                    <span class="logo-font">Rho</span>
+                    <span class="logo-font">deel.</span>
+                    <span class="logo-font">Framer</span>
+                    <span class="logo-font">ramp</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="smart-cta">
+            <div class="smart-cta__card">
+                <div class="smart-cta__content">
+                    <h2>Smarter, simpler scheduling</h2>
+                    <div class="cta-buttons center-buttons">
+                        <a href="#" class="btn btn--primary">Get started ></a>
+                        <a href="#" class="btn btn--secondary">Talk to sales ></a>
+                    </div>
+                    
+                    <div class="smart-cta__badges">
+                        <div class="laurel-badge">
+                            <span class="laurel-leaf">🌿</span>
+                            <div class="laurel-text">
+                                <span class="laurel-title">Product of the day</span>
+                                <span class="laurel-rank">1st</span>
+                            </div>
+                            <span class="laurel-leaf right">🌿</span>
+                        </div>
+                        <div class="laurel-badge">
+                            <span class="laurel-leaf">🌿</span>
+                            <div class="laurel-text">
+                                <span class="laurel-title">Product of the week</span>
+                                <span class="laurel-rank">1st</span>
+                            </div>
+                            <span class="laurel-leaf right">🌿</span>
+                        </div>
+                        <div class="laurel-badge hide-mobile">
+                            <span class="laurel-leaf">🌿</span>
+                            <div class="laurel-text">
+                                <span class="laurel-title">Product of the month</span>
+                                <span class="laurel-rank">1st</span>
+                            </div>
+                            <span class="laurel-leaf right">🌿</span>
+                        </div>
+                        
+                        <div class="review-badge">
+                            <div class="stars yellow">★★★★★</div>
+                            <div class="brand orange-circle">P</div>
+                        </div>
+                        <div class="review-badge">
+                            <div class="stars yellow">★★★★★</div>
+                            <div class="brand google-icon">G</div>
+                        </div>
+                        <div class="review-badge hide-mobile">
+                            <div class="stars red">★★★★★</div>
+                            <div class="brand red-circle">G2</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container">
+            
+            <div class="footer__brand-col">
+                <h2 class="footer__logo">Cal.com</h2>
+                <p class="footer__legal-text">
+                    Cal.com® and Cal® are a registered trademark by Cal.com, Inc. All rights reserved.
+                </p>
+
+                <div class="footer__compliance">
+                    <div class="badge-circle">ISO</div>
+                    <div class="badge-circle">SOC 2</div>
+                    <div class="badge-circle">CCPA</div>
+                    <div class="badge-circle">GDPR</div>
+                </div>
+
+                <p class="footer__mission">
+                    Our mission is to connect a billion people by 2031 through calendar scheduling.
+                </p>
+
+                <div class="footer__status-row">
+                    <button class="btn-status">English</button>
+                    <button class="btn-status flex-between">
+                        All Systems Operational <span class="status-dot"></span>
+                    </button>
+                </div>
+
+                <h4 class="downloads-title">Downloads</h4>
+                <div class="downloads-grid">
+                    <a href="#" class="download-btn">🍎 iPhone</a>
+                    <a href="#" class="download-btn">🤖 Android</a>
+                    <a href="#" class="download-btn">🌐 Chrome</a>
+                    <a href="#" class="download-btn">🧭 Safari</a>
+                    <a href="#" class="download-btn">🌊 Edge</a>
+                    <a href="#" class="download-btn">🦊 Firefox</a>
+                    <a href="#" class="download-btn">💻 MacOS</a>
+                    <a href="#" class="download-btn">🪟 Windows</a>
+                    <a href="#" class="download-btn">🐧 Linux</a>
+                </div>
+
+                <div class="footer__reviews-row">
+                    <div class="review-box orange">
+                        <div class="stars">★★★★★</div>
+                        <p>Read our reviews on</p>
+                    </div>
+                    <div class="review-box green">
+                        <div class="stars">★★★★★</div>
+                        <p>Read our reviews on</p>
+                    </div>
+                </div>
+
+                <p class="footer__help">
+                    Need Help? <a href="#">support@cal.com</a> or visit <a href="#">cal.com/help</a>.
+                </p>
+            </div>
+
+            <div class="footer__links-col">
+                <h4>Solutions</h4>
+                <ul>
+                    <li><a href="#">iOS/Android App</a></li>
+                    <li><a href="#">Self-hosted</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Docs</a></li>
+                    <li><a href="#">Cal.ai - AI Phone Agent</a></li>
+                    <li><a href="#">Enterprise</a></li>
+                    <li><a href="#">Integrate Cal.com</a></li>
+                    <li><a href="#">Routing</a></li>
+                    <li><a href="#">Cal.com Atoms</a></li>
+                    <li><a href="#">Desktop App</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Enterprise API</a></li>
+                    <li><a href="#">Github</a></li>
+                    <li><a href="#">Docker</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__links-col">
+                <h4>Use Cases</h4>
+                <ul>
+                    <li><a href="#">Sales</a></li>
+                    <li><a href="#">Marketing</a></li>
+                    <li><a href="#">Talent Acquisition</a></li>
+                    <li><a href="#">Customer Support</a></li>
+                    <li><a href="#">Higher Education</a></li>
+                    <li><a href="#">Telehealth</a></li>
+                    <li><a href="#">Professional Services</a></li>
+                    <li><a href="#">Hiring Marketplace</a></li>
+                    <li><a href="#">Human Resources</a></li>
+                    <li><a href="#">Tutoring</a></li>
+                    <li><a href="#">C-suite</a></li>
+                    <li><a href="#">Law</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__links-col">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Affiliate Program</a></li>
+                    <li><a href="#">Help Docs</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Cal Fonts</a></li>
+                    <li><a href="#">Teams</a></li>
+                    <li><a href="#">Embed</a></li>
+                    <li><a href="#">Recurring events</a></li>
+                    <li><a href="#">Developers</a></li>
+                    <li><a href="#">OOO</a></li>
+                    <li><a href="#">Workflows</a></li>
+                    <li><a href="#">Instant Meetings</a></li>
+                    <li><a href="#">App Store</a></li>
+                    <li><a href="#">Requires confirmation</a></li>
+                    <li><a href="#">Payments</a></li>
+                    <li><a href="#">Video Conferencing</a></li>
+                    <li><a href="#">Cal.com vs Calendly</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__links-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">Jobs</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Open Startup</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">License</a></li>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">Changelog</a></li>
+                    <li><a href="#">Get a demo</a></li>
+                    <li><a href="#">Talk to sales</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </footer>
+
+    </main>
+
+    </div> 
+</body>
+</html>

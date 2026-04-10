@@ -1,0 +1,1423 @@
+/* ==========================================================================
+   GLOBAL PAGE GRID (The distinguished side lines)
+   ========================================================================== */
+.page-grid-wrapper {
+    /* Set this to match whatever max-width you used for your header/content */
+    max-width: 1200px; 
+    margin: 0 auto; /* This centers the whole block on the screen */
+    
+    /* The subtle gray lines */
+    border-left: 1px solid var(--border-color, #e5e7eb);
+    border-right: 1px solid var(--border-color, #e5e7eb);
+    
+    /* Ensures the lines go all the way down even if content is short */
+    min-height: 100vh; 
+    
+    /* Keeps everything neatly contained inside the lines */
+    overflow: hidden; 
+}
+
+/* ==========================================================================
+   1. VARIABLES & RESETS (Shows professional architecture)
+   ========================================================================== */
+   :root {
+    --bg-color: #fcfcfc;
+    --text-main: #111827;
+    --text-muted: #6b7280;
+    --border-color: #e5e7eb;
+    --primary-black: #111111;
+    --primary-black-hover: #333333;
+    --white: #ffffff;
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    
+    /* Spacing System */
+    --radius-md: 8px;
+    --radius-lg: 16px;
+    --radius-pill: 9999px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   2. NAVBAR (Flexbox)
+   ========================================================================== */
+.header {
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 16px 24px;
+}
+
+.navbar__logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.navbar__links {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+}
+
+.navbar__links a, .link {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.navbar__links a:hover, .link:hover {
+    color: var(--text-muted);
+}
+
+.navbar__links span {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.navbar__actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+/* ==========================================================================
+   3. BUTTON COMPONENTS (Reusable UI)
+   ========================================================================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border-radius: var(--radius-pill);
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    transition: all 0.2s ease; /* BROWNIE POINT: Hover Effects */
+}
+
+.btn--primary {
+    background-color: var(--primary-black);
+    color: var(--white);
+    padding: 10px 18px;
+}
+
+.btn--primary:hover {
+    background-color: var(--primary-black-hover);
+    transform: translateY(-1px);
+}
+
+.btn--google {
+    background-color: var(--primary-black);
+    color: var(--white);
+    width: 100%;
+}
+
+.btn--google:hover {
+    background-color: var(--primary-black-hover);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.btn--secondary {
+    background-color: #f3f4f6;
+    color: var(--text-main);
+    width: 100%;
+}
+
+.btn--secondary:hover {
+    background-color: #e5e7eb;
+}
+
+/* ==========================================================================
+   4. HERO SECTION LAYOUT
+   ========================================================================== */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 80px 24px;
+    align-items: center;
+}
+
+/* --- Hero Left: Content --- */
+.badge {
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: #f3f4f6;
+    color: var(--text-main);
+    border-radius: var(--radius-pill);
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    margin-bottom: 24px;
+    border: 1px solid var(--border-color);
+}
+
+.hero__title {
+    font-size: 4rem;
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+.hero__description {
+    font-size: 1.125rem;
+    color: var(--text-muted);
+    margin-bottom: 32px;
+    max-width: 90%;
+}
+
+.hero__cta {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 350px;
+}
+
+.hero__subtext {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin-top: 12px;
+}
+
+/* Trust Badges */
+.hero__reviews {
+    display: flex;
+    gap: 24px;
+    margin-top: 40px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.review { display: flex; flex-direction: column; gap: 4px; }
+.stars { font-size: 1.2rem; letter-spacing: 2px; }
+.stars.green { color: #00b67a; }
+.stars.yellow { color: #f59e0b; }
+.stars.red { color: #ef4444; }
+
+/* --- Hero Right: Visuals --- */
+.hero__visuals {
+    display: flex;
+    gap: 20px;
+    position: relative;
+}
+
+.mockup-card {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+}
+
+/* Profile Card Specifics */
+.profile-card {
+    flex: 1;
+    z-index: 2;
+}
+
+.profile-card__header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.avatar {
+    width: 48px;
+    height: 48px;
+    background: #e5e7eb;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.name { font-size: 0.875rem; color: var(--text-muted); font-weight: 500;}
+.role { font-size: 1.25rem; font-weight: 600; margin-top: 2px; }
+.profile-card__desc { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 24px; }
+
+.time-pills {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.pill {
+    padding: 8px 16px;
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.pill--active {
+    border-color: var(--primary-black);
+    box-shadow: 0 0 0 1px var(--primary-black);
+}
+
+.meeting-details p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+/* Calendar Card Specifics (GRID SYSTEM) */
+.calendar-card {
+    flex: 1;
+    margin-top: 40px; /* Staggers the design */
+    background: #fdfdfd;
+}
+
+.calendar-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.nav-arrows { color: var(--text-muted); letter-spacing: 8px; cursor: pointer; }
+
+/* BROWNIE POINT & GRID REQUIREMENT */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    text-align: center;
+}
+
+.day-name {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.date {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.date:hover { background: #f3f4f6; }
+
+.date--active {
+    background: var(--primary-black);
+    color: var(--white);
+    font-weight: 600;
+}
+.date--active:hover { background: var(--primary-black); }
+
+/* ==========================================================================
+   HOW IT WORKS SECTION
+   ========================================================================== */
+.how-it-works {
+    padding: 100px 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-bottom: 1px solid var(--border-color, #e5e7eb);
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.step-card {
+    background-color: #f9fafb;
+    border: 1px solid var(--border-color, #e5e7eb);
+    border-radius: 24px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+}
+
+.step-number {
+    background: #f3f4f6;
+    color: #6b7280;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 4px 12px;
+    border-radius: 8px;
+    width: fit-content;
+    margin-bottom: 24px;
+}
+
+.step-content h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--text-main);
+}
+
+.step-content p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 40px;
+}
+
+/* Visual Placeholders for Graphics */
+.step-visual {
+    margin-top: auto;
+    background: white;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Specific Placeholder Styles to mimic the Screenshot visuals */
+.orbital-graphic { position: relative; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+.central-logo { border: 1px solid #e5e7eb; padding: 10px; border-radius: 12px; font-weight: bold; }
+
+.availability-graphic { width: 90%; padding: 10px; }
+.avail-row { font-size: 0.8rem; padding: 8px 0; border-bottom: 1px solid #f3f4f6; display: flex; justify-content: space-between; }
+
+.video-call-graphic { display: flex; gap: 15px; flex-direction: column; align-items: center; }
+.avatar-circle { width: 50px; height: 50px; background: #e5e7eb; border-radius: 50%; }
+
+/* Responsive */
+@media (max-width: 992px) {
+    .steps-grid {
+        grid-template-columns: 1fr; /* Stacks on mobile/tablet */
+    }
+}
+
+/* ==========================================================================
+   BENEFITS SECTION
+   ========================================================================== */
+.benefits-section {
+    padding: 100px 24px;
+    background-color: var(--white);
+    max-width: 1200px;
+    margin: 0 auto;
+    border-bottom: 1px solid var(--border-color, #e5e7eb); /* Adds to the global grid look */
+}
+
+/* Reusable Header Styling (matches Hero) */
+.section-header {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 64px;
+}
+
+.section-header h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 16px;
+    color: var(--text-main);
+}
+
+.section-header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 32px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+/* Large 2x2 Feature Grid */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-bottom: 100px;
+}
+
+.benefit-card {
+    background-color: #f9fafb; /* Light grey background */
+    border-radius: 24px;
+    padding: 48px 48px 0 48px; /* Zero padding at bottom so UI image sits flush */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--border-color, #e5e7eb);
+}
+
+.benefit-text {
+    margin-bottom: 40px;
+}
+
+.benefit-text h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--text-main);
+}
+
+.benefit-text p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* Placeholder for the mock UI images */
+.ui-placeholder {
+    margin-top: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.mock-ui-box {
+    width: 100%;
+    height: 200px;
+    background-color: var(--white);
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    border: 1px solid var(--border-color, #e5e7eb);
+    border-bottom: none;
+}
+
+/* "...and so much more!" Section */
+.more-features-container {
+    text-align: center;
+    padding-top: 40px;
+}
+
+.more-features-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 48px;
+    color: var(--text-main);
+}
+
+/* 4-column Mini Grid */
+.mini-features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.mini-card {
+    background-color: var(--white);
+    border: 1px solid var(--border-color, #e5e7eb);
+    border-radius: 16px;
+    padding: 32px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    transition: transform 0.2s ease;
+}
+
+.mini-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+.mini-icon {
+    font-size: 2rem;
+    background: #f3f4f6;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+}
+
+.mini-card span {
+    font-weight: 600;
+    color: var(--text-main);
+    font-size: 0.95rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .mini-features-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .section-header h2 { font-size: 2.5rem; }
+    .benefits-grid {
+        grid-template-columns: 1fr; /* 1 column on mobile */
+    }
+    .benefit-card {
+        padding: 32px 32px 0 32px;
+    }
+}
+
+/* ==========================================================================
+   STATIC TESTIMONIALS CLONE
+   ========================================================================== */
+.static-testimonials {
+    padding: 80px 0;
+    text-align: center;
+    background-color: var(--bg-color);
+    overflow: hidden; /* This is the magic that cuts off the side cards */
+    width: 100%;
+}
+
+.test-header {
+    max-width: 600px;
+    margin: 0 auto 48px;
+    padding: 0 24px;
+}
+
+.test-header h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 16px;
+    color: var(--text-main);
+}
+
+.test-header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+/* Static Container */
+.static-cards-container {
+    display: flex;
+    justify-content: center; /* Always centers the middle card */
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+}
+
+/* Individual Static Cards */
+.static-card {
+    flex: 0 0 600px; /* Forces cards to be exactly 600px wide */
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 48px;
+    text-align: left;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 250px;
+}
+
+/* Styling to match the screenshot's faded side cards */
+.faded-card {
+    opacity: 0.4;
+}
+
+.faded-card h3 {
+    color: var(--text-muted); /* Lighter grey text */
+}
+
+/* Styling to match the prominent center card */
+.center-card {
+    opacity: 1;
+    border: 1px solid #d1d5db; /* Slightly more visible border */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Slightly larger shadow */
+}
+
+.static-card h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.5px;
+    color: var(--text-main);
+    margin-bottom: 32px;
+}
+
+/* Author Info */
+.author-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.author-details h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.author-details span {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* Responsive Adjustments to keep it looking like a clone on smaller screens */
+@media (max-width: 768px) {
+    .test-header h2 { font-size: 2.2rem; }
+    .static-card { 
+        flex: 0 0 85vw; /* Shrinks the center card slightly to fit phones */
+        padding: 32px; 
+    }
+    .static-card h3 { font-size: 1.4rem; }
+}
+
+/* ==========================================================================
+   SYNC TOOLS SECTION (App Integrations Card)
+   ========================================================================== */
+.sync-tools {
+    max-width: 1300px;
+    margin: 0 auto 80px;
+    padding: 0 24px;
+}
+
+.sync-tools__card {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 64px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+    gap: 48px;
+}
+
+/* Left Column Content */
+.sync-tools__content {
+    flex: 1;
+    max-width: 500px;
+}
+
+.pill-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: var(--text-main);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.grid-icon {
+    font-size: 1rem;
+    color: var(--text-muted);
+}
+
+.sync-tools__content h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    color: var(--text-main);
+}
+
+.sync-tools__content p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 32px;
+}
+
+.sync-tools__content .cta-buttons {
+    justify-content: flex-start;
+}
+
+/* Right Column App Grid */
+.sync-tools__apps {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.app-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    width: 100%;
+    max-width: 480px;
+}
+
+.app-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 16px;
+    position: relative;
+}
+
+/* Subtle Inner Grid Lines */
+.border-right {
+    border-right: 1px solid var(--border-color);
+}
+.border-bottom {
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* App Logo Placeholders (Mimicking the screenshot colors) */
+.app-logo {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.orange-text { color: #f97316; font-size: 0.6rem; text-transform: uppercase; border: 1px solid #f97316; }
+.blue-text { color: #0ea5e9; font-size: 2rem; box-shadow: none; }
+.blue-bg { background-color: #2563eb; color: white; }
+.gmeet { background-color: white; border: 1px solid #e5e7eb; color: #10b981; }
+.gcal { background-color: white; border: 1px solid #e5e7eb; color: #3b82f6; font-size: 1.2rem; }
+.teams { background-color: #5b21b6; color: white; }
+.dark-bg { background-color: #1f2937; color: white; font-size: 0.8rem; letter-spacing: 2px;}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .sync-tools__card {
+        flex-direction: column;
+        padding: 40px 24px;
+        text-align: center;
+    }
+    .sync-tools__content {
+        margin-bottom: 40px;
+    }
+    .sync-tools__content .cta-buttons {
+        justify-content: center;
+    }
+    .sync-tools__apps {
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .app-grid {
+        grid-template-columns: repeat(2, 1fr); /* Stacks to 2x4 on mobile */
+    }
+    /* Reset borders for mobile stacked view */
+    .app-cell { border: none !important; }
+}
+
+/* ==========================================================================
+   7. TRUSTED BY SECTION (Logos)
+   ========================================================================== */
+.trusted-by {
+    padding: 32px 24px;
+    border-top: 1px solid var(--border-color);
+    background: var(--bg-color);
+}
+
+.trusted-by__container {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.trusted-by__text {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.trusted-by__logos {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    color: var(--text-main);
+}
+
+.logo-font {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    opacity: 0.85; /* Makes them look slightly muted like real logos */
+    transition: opacity 0.2s ease;
+    cursor: default;
+}
+
+.logo-font:hover { opacity: 1; }
+.logo-font.bold { font-weight: 800; }
+
+/* ==========================================================================
+   WOL. WALL OF LOVE (TESTIMONIALS)
+   ========================================================================== */
+.wall-of-love {
+    max-width: 1300px;
+    margin: 80px auto 40px;
+    padding: 0 24px;
+}
+
+.wol-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.wol-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: var(--text-main);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.wol-header h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 12px;
+    color: var(--text-main);
+}
+
+.wol-header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 32px;
+}
+
+/* THE MASONRY TRICK */
+.wol-masonry {
+    column-count: 3; /* Creates 3 columns */
+    column-gap: 24px; /* Space between columns */
+    width: 100%;
+}
+
+.review-card {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 24px; /* Space between cards vertically */
+    break-inside: avoid; /* Prevents cards from breaking across columns */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.review-card:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.04);
+}
+
+.reviewer-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+/* Avatar Placeholders */
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.avatar.blue { background-color: #3b82f6; }
+.avatar.orange { background-color: #f97316; }
+.avatar.green { background-color: #10b981; }
+.avatar.purple { background-color: #8b5cf6; }
+.avatar.red { background-color: #ef4444; }
+.avatar.dark { background-color: #1f2937; }
+
+.reviewer-details h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-main);
+    line-height: 1.2;
+}
+
+.reviewer-details span {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.review-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #374151;
+    margin-bottom: 12px;
+}
+
+.review-card p:last-child {
+    margin-bottom: 0;
+}
+
+.mention {
+    color: #8b5cf6; /* Cal.com purple link color */
+    text-decoration: none;
+}
+
+.mention:hover {
+    text-decoration: underline;
+}
+
+.wol-footer {
+    text-align: center;
+    margin-top: 16px;
+}
+
+/* ==========================================================================
+   8. SMARTER CTA SECTION (The Large Card)
+   ========================================================================== */
+.smart-cta {
+    padding: 40px 24px 80px;
+    background-color: #f9f9f9; /* Blends into the footer */
+}
+
+.smart-cta__card {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 80px 24px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+    
+    /* CSS TRICK: This creates the subtle background grid seen in the screenshot! */
+    background-image: 
+        linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    background-position: center center;
+}
+
+.smart-cta__content {
+    position: relative;
+    z-index: 2; /* Keeps text above the background grid */
+}
+
+.smart-cta__card h2 {
+    font-size: 3.5rem;
+    letter-spacing: -1.5px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: var(--text-main);
+}
+
+.center-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 48px;
+}
+
+/* Badges Row */
+.smart-cta__badges {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 32px;
+}
+
+/* Laurel Badges */
+.laurel-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #4b5563;
+}
+
+.laurel-leaf {
+    font-size: 1.5rem;
+    opacity: 0.5;
+    transform: scaleX(-1); /* Flips the left leaf */
+}
+.laurel-leaf.right {
+    transform: scaleX(1); /* Normal right leaf */
+}
+
+.laurel-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.1;
+}
+
+.laurel-title {
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.laurel-rank {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+/* Review Badges */
+.review-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.review-badge .stars {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+}
+
+.brand {
+    font-size: 0.75rem;
+    font-weight: 700;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--white);
+}
+
+.orange-circle { background-color: #ea580c; }
+.red-circle { background-color: #dc2626; }
+.google-icon { background-color: transparent; color: #4285F4; font-size: 1rem; }
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .smart-cta__card h2 { font-size: 2.5rem; }
+    .trusted-by__container { justify-content: center; text-align: center; }
+}
+
+@media (max-width: 768px) {
+    .hide-mobile { display: none; /* Hides extra badges on small screens to prevent clutter */ }
+    .smart-cta__badges { gap: 20px; }
+    .smart-cta__card h2 { font-size: 2rem; }
+}
+
+/* ==========================================================================
+   10. ADVANCED FOOTER RECREATION
+   ========================================================================== */
+.footer {
+    background-color: #f9f9f9; /* Slightly off-white matching the screenshot */
+    border-top: 1px solid var(--border-color);
+    padding: 80px 24px;
+    font-family: var(--font-family);
+}
+
+/* Macro Layout: 5 Columns (1 wide, 4 standard) */
+.footer__container {
+    display: grid;
+    grid-template-columns: 320px repeat(4, 1fr);
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* --- Left Column Styling --- */
+.footer__brand-col {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer__logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-black);
+}
+
+.footer__legal-text, .footer__mission {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.footer__compliance {
+    display: flex;
+    gap: 12px;
+}
+
+.badge-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6rem;
+    font-weight: 700;
+    background: var(--white);
+}
+
+.footer__status-row {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-status {
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background: var(--white);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.flex-between {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #10b981; /* Green operational dot */
+    border-radius: 50%;
+}
+
+.downloads-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+/* Micro Layout: Nested Grid for Download Buttons */
+.downloads-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.download-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background: var(--white);
+    text-decoration: none;
+    color: var(--text-main);
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: background 0.2s ease;
+}
+
+.download-btn:hover {
+    background: #f3f4f6;
+}
+
+.footer__reviews-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.review-box {
+    flex: 1;
+    padding: 12px;
+    border-radius: 6px;
+    color: var(--white);
+    font-size: 0.75rem;
+}
+
+.review-box.orange { background-color: #ea580c; }
+.review-box.green { background-color: #059669; }
+.review-box .stars { font-size: 1rem; margin-bottom: 4px; }
+
+.footer__help {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.footer__help a {
+    color: #3b82f6; /* Blue link */
+    text-decoration: none;
+}
+
+.footer__help a:hover {
+    text-decoration: underline;
+}
+
+/* --- Right Columns Styling (Link Lists) --- */
+.footer__links-col h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--primary-black);
+}
+
+.footer__links-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* High gap to match the spacious design in the image */
+}
+
+.footer__links-col a {
+    text-decoration: none;
+    color: #4b5563; /* Slightly darker muted text */
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+.footer__links-col a:hover {
+    color: var(--primary-black);
+}
+
+/* ==========================================================================
+   11. FOOTER RESPONSIVENESS (Brownie Point #1)
+   ========================================================================== */
+@media (max-width: 1200px) {
+    .footer__container {
+        /* Collapse to a 3-column grid on medium screens */
+        grid-template-columns: 320px 1fr 1fr; 
+    }
+}
+
+@media (max-width: 768px) {
+    .footer__container {
+        /* Stack everything on mobile */
+        grid-template-columns: 1fr; 
+    }
+    
+    .downloads-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 buttons per row on mobile */
+    }
+
+    .wol-masonry {
+        column-count: 1; /* Drops to 1 column on mobile */
+    }
+}
+
+/* ==========================================================================
+   5. RESPONSIVENESS (Brownie Point #1)
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .navbar__links {
+        display: none; /* Collapses nav on smaller screens */
+    }
+    
+    .hero {
+        grid-template-columns: 1fr; /* Stacks content and visuals vertically */
+        padding: 40px 24px;
+        text-align: center;
+    }
+    
+    .hero__description, .hero__cta {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero__reviews {
+        justify-content: center;
+    }
+
+    .hero__visuals {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .calendar-card {
+        margin-top: 0;
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    .profile-card {
+        width: 100%;
+        max-width: 400px;
+        text-align: left;
+    }
+
+    .wol-header h2 {
+        font-size: 2.2rem;
+    }
+    .wol-masonry {
+        column-count: 2; /* Drops to 2 columns on tablets */
+    }
+
+}
+
+@media (max-width: 600px) {
+    .hero__title {
+        font-size: 2.5rem;
+    }
+}
